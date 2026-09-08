@@ -477,3 +477,30 @@ def multiplicar_por_escalar(matriz, escalar):
 
     return resultado
 
+def buscar_submatriz_critica(matriz, filas, columnas):
+
+    mejor_promedio = -1
+    mejor_submatriz = []
+
+    limite_fila = len(matriz) - filas + 1
+    limite_columna = len(matriz[0]) - columnas + 1
+
+    for i in range(limite_fila):
+        for j in range(limite_columna):
+
+            submatriz = extraer_submatriz(
+                matriz,
+                i,
+                j,
+                filas,
+                columnas
+            )
+
+            promedio = calcular_promedio(submatriz)
+
+            if promedio > mejor_promedio:
+                mejor_promedio = promedio
+                mejor_submatriz = submatriz
+
+    return mejor_submatriz
+
