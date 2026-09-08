@@ -181,3 +181,13 @@ def obtener_diagonal_principal(matriz):
 
     return diagonal
 
+def obtener_diagonal_secundaria(matriz):
+    diagonal = []
+
+    n = len(matriz)
+
+    for i in range(n):
+        diagonal.append(matriz[i][n - 1 - i])
+
+    return diagonal
+
