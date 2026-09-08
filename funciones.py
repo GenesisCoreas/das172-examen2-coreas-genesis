@@ -110,3 +110,17 @@ def comparar_matrices(matriz1, matriz2):
 
     return True
 
+def sumar_matrices(matriz1, matriz2):
+    resultado = []
+
+    for i in range(len(matriz1)):
+        fila = []
+
+        for j in range(len(matriz1[i])):
+            suma = matriz1[i][j] + matriz2[i][j]
+            fila.append(suma)
+
+        resultado.append(fila)
+
+    return resultado
+
