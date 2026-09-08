@@ -70,3 +70,29 @@ def evaluar_balance(cargas, tolerancia):
 
     return pesos_filas, desbalance, balanceado
 
+def extraer_submatriz(matriz, inicio_fila, inicio_columna, filas, columnas):
+    submatriz = []
+
+    for i in range(inicio_fila, inicio_fila + filas):
+        fila = []
+
+        for j in range(inicio_columna, inicio_columna + columnas):
+            fila.append(matriz[i][j])
+
+        submatriz.append(fila)
+
+    return submatriz
+
+def transformar_matriz(matriz):
+    transformada = []
+
+    for fila in matriz:
+        nueva_fila = []
+
+        for elemento in fila:
+            nueva_fila.append(elemento * 2)
+
+        transformada.append(nueva_fila)
+
+    return transformada
+
