@@ -448,3 +448,11 @@ def encontrar_posicion(matriz, elemento):
 
     return None
 
+def sumar_fila(matriz, fila):
+    suma = 0
+
+    for elemento in matriz[fila]:
+        suma += elemento
+
+    return suma
+
