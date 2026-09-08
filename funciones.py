@@ -440,3 +440,11 @@ def buscar_elemento(matriz, elemento):
 
     return False
 
+def encontrar_posicion(matriz, elemento):
+    for i in range(len(matriz)):
+        for j in range(len(matriz[i])):
+            if matriz[i][j] == elemento:
+                return [i, j]
+
+    return None
+
