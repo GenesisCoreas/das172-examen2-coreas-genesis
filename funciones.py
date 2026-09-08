@@ -191,3 +191,16 @@ def obtener_diagonal_secundaria(matriz):
 
     return diagonal
 
+def sumar_filas(matriz):
+    sumas = []
+
+    for fila in matriz:
+        suma = 0
+
+        for elemento in fila:
+            suma += elemento
+
+        sumas.append(suma)
+
+    return sumas
+
