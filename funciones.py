@@ -403,3 +403,13 @@ def es_matriz_simetrica(matriz):
 
     return True
 
+def sumar_matriz_elementos_pares(matriz):
+    suma = 0
+
+    for fila in matriz:
+        for elemento in fila:
+            if elemento % 2 == 0:
+                suma += elemento
+
+    return suma
+
