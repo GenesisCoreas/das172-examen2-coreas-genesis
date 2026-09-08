@@ -277,3 +277,20 @@ def dimensiones_multiplicacion_validas(A, B):
 
     return columnas_A == filas_B
 
+def es_matriz_identidad(matriz):
+    filas = len(matriz)
+    columnas = len(matriz[0])
+
+    if filas != columnas:
+        return False
+
+    for i in range(filas):
+        for j in range(columnas):
+            if i == j and matriz[i][j] != 1:
+                return False
+
+            if i != j and matriz[i][j] != 0:
+                return False
+
+    return True
+
