@@ -228,3 +228,13 @@ def sumar_matriz(matriz):
 
     return suma_total
 
+def encontrar_maximo(matriz):
+    maximo = matriz[0][0]
+
+    for i in range(len(matriz)):
+        for j in range(len(matriz[i])):
+            if matriz[i][j] > maximo:
+                maximo = matriz[i][j]
+
+    return maximo
+
