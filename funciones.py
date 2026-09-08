@@ -432,3 +432,11 @@ def contar_elementos_impares(matriz):
 
     return cantidad
 
+def buscar_elemento(matriz, elemento):
+    for fila in matriz:
+        for valor in fila:
+            if valor == elemento:
+                return True
+
+    return False
+
