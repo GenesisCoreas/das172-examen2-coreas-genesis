@@ -294,3 +294,16 @@ def es_matriz_identidad(matriz):
 
     return True
 
+def sumar_matrices(A, B):
+    resultado = []
+
+    for i in range(len(A)):
+        fila = []
+
+        for j in range(len(A[i])):
+            fila.append(A[i][j] + B[i][j])
+
+        resultado.append(fila)
+
+    return resultado
+
