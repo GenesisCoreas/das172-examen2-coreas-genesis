@@ -22,3 +22,24 @@ def validar_matrices(cargas, capacidades):
                 return False
 
     return True
+
+def calcular_ocupacion(cargas, capacidades):
+    ocupacion = []
+    sobrecargas = []
+
+    for i in range(len(cargas)):
+        fila_ocupacion = []
+
+        for j in range(len(cargas[i])):
+
+            porcentaje = (cargas[i][j] / capacidades[i][j]) * 100
+
+            fila_ocupacion.append(porcentaje)
+
+            if porcentaje > 100:
+                sobrecargas.append((i, j))
+
+        ocupacion.append(fila_ocupacion)
+
+    return ocupacion, sobrecargas
+
