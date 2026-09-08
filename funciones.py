@@ -504,3 +504,27 @@ def buscar_submatriz_critica(matriz, filas, columnas):
 
     return mejor_submatriz
 
+def extraer_submatriz(matriz, inicio_fila, inicio_columna, filas, columnas):
+
+    resultado = []
+
+    if inicio_fila + filas > len(matriz):
+        return None
+
+    if inicio_columna + columnas > len(matriz[0]):
+        return None
+
+
+    for i in range(inicio_fila, inicio_fila + filas):
+
+        fila = []
+
+        for j in range(inicio_columna, inicio_columna + columnas):
+
+            fila.append(matriz[i][j])
+
+        resultado.append(fila)
+
+
+    return resultado
+
