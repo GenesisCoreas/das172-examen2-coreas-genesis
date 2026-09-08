@@ -204,3 +204,18 @@ def sumar_filas(matriz):
 
     return sumas
 
+def sumar_columnas(matriz):
+    sumas = []
+
+    columnas = len(matriz[0])
+
+    for j in range(columnas):
+        suma = 0
+
+        for i in range(len(matriz)):
+            suma += matriz[i][j]
+
+        sumas.append(suma)
+
+    return sumas
+
