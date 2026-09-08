@@ -110,26 +110,6 @@ def comparar_matrices(matriz1, matriz2):
 
     return True
 
-def multiplicar_matrices(matriz1, matriz2):
-    filas = len(matriz1)
-    columnas = len(matriz2[0])
-    resultado = []
-
-    for i in range(filas):
-        fila = []
-
-        for j in range(columnas):
-            suma = 0
-
-            for k in range(len(matriz2)):
-                suma += matriz1[i][k] * matriz2[k][j]
-
-            fila.append(suma)
-
-        resultado.append(fila)
-
-    return resultado
-
 def transponer_matriz(matriz):
     filas = len(matriz)
     columnas = len(matriz[0])
@@ -145,19 +125,6 @@ def transponer_matriz(matriz):
         transpuesta.append(fila)
 
     return transpuesta
-
-def multiplicar_por_escalar(matriz, escalar):
-    resultado = []
-
-    for fila in matriz:
-        nueva_fila = []
-
-        for elemento in fila:
-            nueva_fila.append(elemento * escalar)
-
-        resultado.append(nueva_fila)
-
-    return resultado
 
 def obtener_diagonal_principal(matriz):
     diagonal = []
@@ -280,19 +247,6 @@ def es_matriz_identidad(matriz):
 
     return True
 
-def sumar_matrices(A, B):
-    resultado = []
-
-    for i in range(len(A)):
-        fila = []
-
-        for j in range(len(A[i])):
-            fila.append(A[i][j] + B[i][j])
-
-        resultado.append(fila)
-
-    return resultado
-
 def multiplicar_por_escalar(matriz, escalar):
     resultado = []
 
@@ -303,28 +257,6 @@ def multiplicar_por_escalar(matriz, escalar):
             nueva_fila.append(elemento * escalar)
 
         resultado.append(nueva_fila)
-
-    return resultado
-
-def multiplicar_matrices(A, B):
-    resultado = []
-
-    filas_A = len(A)
-    columnas_A = len(A[0])
-    columnas_B = len(B[0])
-
-    for i in range(filas_A):
-        fila = []
-
-        for j in range(columnas_B):
-            suma = 0
-
-            for k in range(columnas_A):
-                suma += A[i][k] * B[k][j]
-
-            fila.append(suma)
-
-        resultado.append(fila)
 
     return resultado
 
@@ -450,19 +382,6 @@ def sumar_columna(matriz, columna):
 
     return suma
 
-def multiplicar_por_escalar(matriz, escalar):
-    resultado = []
-
-    for fila in matriz:
-        nueva_fila = []
-
-        for elemento in fila:
-            nueva_fila.append(elemento * escalar)
-
-        resultado.append(nueva_fila)
-
-    return resultado
-
 def buscar_submatriz_critica(matriz, filas, columnas):
 
     mejor_promedio = -1
@@ -489,30 +408,6 @@ def buscar_submatriz_critica(matriz, filas, columnas):
                 mejor_submatriz = submatriz
 
     return mejor_submatriz
-
-def extraer_submatriz(matriz, inicio_fila, inicio_columna, filas, columnas):
-
-    resultado = []
-
-    if inicio_fila + filas > len(matriz):
-        return None
-
-    if inicio_columna + columnas > len(matriz[0]):
-        return None
-
-
-    for i in range(inicio_fila, inicio_fila + filas):
-
-        fila = []
-
-        for j in range(inicio_columna, inicio_columna + columnas):
-
-            fila.append(matriz[i][j])
-
-        resultado.append(fila)
-
-
-    return resultado
 
 def sumar_matrices(A, B):
     resultado = []
