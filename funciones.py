@@ -124,3 +124,23 @@ def sumar_matrices(matriz1, matriz2):
 
     return resultado
 
+def multiplicar_matrices(matriz1, matriz2):
+    filas = len(matriz1)
+    columnas = len(matriz2[0])
+    resultado = []
+
+    for i in range(filas):
+        fila = []
+
+        for j in range(columnas):
+            suma = 0
+
+            for k in range(len(matriz2)):
+                suma += matriz1[i][k] * matriz2[k][j]
+
+            fila.append(suma)
+
+        resultado.append(fila)
+
+    return resultado
+
