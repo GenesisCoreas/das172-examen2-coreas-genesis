@@ -320,3 +320,25 @@ def multiplicar_por_escalar(matriz, escalar):
 
     return resultado
 
+def multiplicar_matrices(A, B):
+    resultado = []
+
+    filas_A = len(A)
+    columnas_A = len(A[0])
+    columnas_B = len(B[0])
+
+    for i in range(filas_A):
+        fila = []
+
+        for j in range(columnas_B):
+            suma = 0
+
+            for k in range(columnas_A):
+                suma += A[i][k] * B[k][j]
+
+            fila.append(suma)
+
+        resultado.append(fila)
+
+    return resultado
+
