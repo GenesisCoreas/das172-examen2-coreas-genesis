@@ -413,3 +413,12 @@ def sumar_matriz_elementos_pares(matriz):
 
     return suma
 
+def contar_elementos_matriz(matriz):
+    cantidad = 0
+
+    for fila in matriz:
+        for elemento in fila:
+            cantidad += 1
+
+    return cantidad
+
