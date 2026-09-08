@@ -464,3 +464,16 @@ def sumar_columna(matriz, columna):
 
     return suma
 
+def multiplicar_por_escalar(matriz, escalar):
+    resultado = []
+
+    for fila in matriz:
+        nueva_fila = []
+
+        for elemento in fila:
+            nueva_fila.append(elemento * escalar)
+
+        resultado.append(nueva_fila)
+
+    return resultado
+
