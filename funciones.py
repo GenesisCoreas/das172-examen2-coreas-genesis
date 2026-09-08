@@ -456,3 +456,11 @@ def sumar_fila(matriz, fila):
 
     return suma
 
+def sumar_columna(matriz, columna):
+    suma = 0
+
+    for fila in matriz:
+        suma += fila[columna]
+
+    return suma
+
