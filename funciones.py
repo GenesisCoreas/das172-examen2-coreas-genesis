@@ -110,20 +110,6 @@ def comparar_matrices(matriz1, matriz2):
 
     return True
 
-def sumar_matrices(matriz1, matriz2):
-    resultado = []
-
-    for i in range(len(matriz1)):
-        fila = []
-
-        for j in range(len(matriz1[i])):
-            suma = matriz1[i][j] + matriz2[i][j]
-            fila.append(suma)
-
-        resultado.append(fila)
-
-    return resultado
-
 def multiplicar_matrices(matriz1, matriz2):
     filas = len(matriz1)
     columnas = len(matriz2[0])
@@ -522,6 +508,47 @@ def extraer_submatriz(matriz, inicio_fila, inicio_columna, filas, columnas):
         for j in range(inicio_columna, inicio_columna + columnas):
 
             fila.append(matriz[i][j])
+
+        resultado.append(fila)
+
+
+    return resultado
+
+def sumar_matrices(A, B):
+    resultado = []
+
+    for i in range(len(A)):
+        fila = []
+
+        for j in range(len(A[i])):
+            fila.append(A[i][j] + B[i][j])
+
+        resultado.append(fila)
+
+    return resultado
+
+def multiplicar_matrices(A, B):
+
+    resultado = []
+
+    filas_A = len(A)
+    columnas_A = len(A[0])
+    columnas_B = len(B[0])
+
+
+    for i in range(filas_A):
+
+        fila=[]
+
+        for j in range(columnas_B):
+
+            suma=0
+
+            for k in range(columnas_A):
+
+                suma += A[i][k]*B[k][j]
+
+            fila.append(suma)
 
         resultado.append(fila)
 
