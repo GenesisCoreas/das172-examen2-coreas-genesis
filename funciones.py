@@ -173,3 +173,11 @@ def multiplicar_por_escalar(matriz, escalar):
 
     return resultado
 
+def obtener_diagonal_principal(matriz):
+    diagonal = []
+
+    for i in range(len(matriz)):
+        diagonal.append(matriz[i][i])
+
+    return diagonal
+
