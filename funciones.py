@@ -422,3 +422,13 @@ def contar_elementos_matriz(matriz):
 
     return cantidad
 
+def contar_elementos_impares(matriz):
+    cantidad = 0
+
+    for fila in matriz:
+        for elemento in fila:
+            if elemento % 2 != 0:
+                cantidad += 1
+
+    return cantidad
+
