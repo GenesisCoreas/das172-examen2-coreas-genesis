@@ -248,3 +248,14 @@ def encontrar_minimo(matriz):
 
     return minimo
 
+def calcular_promedio(matriz):
+    suma = 0
+    cantidad = 0
+
+    for i in range(len(matriz)):
+        for j in range(len(matriz[i])):
+            suma += matriz[i][j]
+            cantidad += 1
+
+    return suma / cantidad
+
