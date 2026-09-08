@@ -342,3 +342,13 @@ def multiplicar_matrices(A, B):
 
     return resultado
 
+def es_triangular_superior(matriz):
+    filas = len(matriz)
+
+    for i in range(filas):
+        for j in range(i):
+            if matriz[i][j] != 0:
+                return False
+
+    return True
+
