@@ -219,3 +219,12 @@ def sumar_columnas(matriz):
 
     return sumas
 
+def sumar_matriz(matriz):
+    suma_total = 0
+
+    for i in range(len(matriz)):
+        for j in range(len(matriz[i])):
+            suma_total += matriz[i][j]
+
+    return suma_total
+
