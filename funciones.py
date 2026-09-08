@@ -268,3 +268,12 @@ def es_matriz_cuadrada(matriz):
 
     return True
 
+def dimensiones_multiplicacion_validas(A, B):
+    filas_A = len(A)
+    columnas_A = len(A[0])
+
+    filas_B = len(B)
+    columnas_B = len(B[0])
+
+    return columnas_A == filas_B
+
