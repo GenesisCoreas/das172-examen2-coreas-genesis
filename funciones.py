@@ -380,3 +380,12 @@ def sumar_diagonal_principal(matriz):
 
     return suma
 
+def sumar_diagonal_secundaria(matriz):
+    suma = 0
+    n = len(matriz)
+
+    for i in range(n):
+        suma += matriz[i][n - 1 - i]
+
+    return suma
+
