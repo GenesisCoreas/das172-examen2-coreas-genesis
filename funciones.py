@@ -362,3 +362,13 @@ def es_triangular_inferior(matriz):
 
     return True
 
+def es_matriz_diagonal(matriz):
+    filas = len(matriz)
+
+    for i in range(filas):
+        for j in range(filas):
+            if i != j and matriz[i][j] != 0:
+                return False
+
+    return True
+
