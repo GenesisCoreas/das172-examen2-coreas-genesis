@@ -43,3 +43,30 @@ def calcular_ocupacion(cargas, capacidades):
 
     return ocupacion, sobrecargas
 
+def evaluar_balance(cargas, tolerancia):
+    pesos_filas = []
+
+    for fila in cargas:
+        pesos_filas.append(sum(fila))
+
+    columnas = len(cargas[0])
+
+    mitad = columnas // 2
+
+    izquierda = 0
+    derecha = 0
+
+    for fila in cargas:
+        izquierda += sum(fila[:mitad])
+
+        if columnas % 2 == 0:
+            derecha += sum(fila[mitad:])
+        else:
+            derecha += sum(fila[mitad + 1:])
+
+    desbalance = abs(izquierda - derecha)
+
+    balanceado = desbalance <= tolerancia
+
+    return pesos_filas, desbalance, balanceado
+
