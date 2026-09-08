@@ -389,3 +389,17 @@ def sumar_diagonal_secundaria(matriz):
 
     return suma
 
+def es_matriz_simetrica(matriz):
+    filas = len(matriz)
+    columnas = len(matriz[0])
+
+    if filas != columnas:
+        return False
+
+    for i in range(filas):
+        for j in range(columnas):
+            if matriz[i][j] != matriz[j][i]:
+                return False
+
+    return True
+
