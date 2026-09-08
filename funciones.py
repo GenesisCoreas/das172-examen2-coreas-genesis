@@ -238,3 +238,13 @@ def encontrar_maximo(matriz):
 
     return maximo
 
+def encontrar_minimo(matriz):
+    minimo = matriz[0][0]
+
+    for i in range(len(matriz)):
+        for j in range(len(matriz[i])):
+            if matriz[i][j] < minimo:
+                minimo = matriz[i][j]
+
+    return minimo
+
