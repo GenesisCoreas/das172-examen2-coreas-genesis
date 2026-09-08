@@ -352,3 +352,13 @@ def es_triangular_superior(matriz):
 
     return True
 
+def es_triangular_inferior(matriz):
+    filas = len(matriz)
+
+    for i in range(filas):
+        for j in range(i + 1, filas):
+            if matriz[i][j] != 0:
+                return False
+
+    return True
+
