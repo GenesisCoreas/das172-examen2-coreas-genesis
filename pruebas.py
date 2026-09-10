@@ -142,3 +142,22 @@ assert balanceado == True
 
 
 print("Todas las pruebas de casos limite pasaron correctamente.")
+
+# CASO 11: matriz irregular
+cargas_irregulares = [
+    [10, 20],
+    [30, 40, 50]
+]
+
+capacidades_irregulares = [
+    [100, 100],
+    [100, 100, 100]
+]
+
+assert validar_matrices(
+    cargas_irregulares,
+    capacidades_irregulares
+) == False
+
+
+print("La prueba de matriz irregular paso correctamente.")

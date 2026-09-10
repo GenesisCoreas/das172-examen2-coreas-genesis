@@ -5,15 +5,20 @@ def validar_matrices(cargas, capacidades):
     if len(cargas) < 2:
         return False
 
+    columnas = len(cargas[0])
+
+    if columnas < 2:
+        return False
+
     for i in range(len(cargas)):
 
-        if len(cargas[i]) != len(capacidades[i]):
+        if len(cargas[i]) != columnas:
             return False
 
-        if len(cargas[i]) < 2:
+        if len(capacidades[i]) != columnas:
             return False
 
-        for j in range(len(cargas[i])):
+        for j in range(columnas):
 
             if cargas[i][j] < 0:
                 return False
@@ -71,7 +76,19 @@ def evaluar_balance(cargas, tolerancia):
     return pesos_filas, desbalance, balanceado
 
 def extraer_submatriz(matriz, inicio_fila, inicio_columna, filas, columnas):
-    submatriz = []
+    resultado = []
+
+    if inicio_fila < 0 or inicio_columna < 0:
+        return None
+
+    if filas <= 0 or columnas <= 0:
+        return None
+
+    if inicio_fila + filas > len(matriz):
+        return None
+
+    if inicio_columna + columnas > len(matriz[0]):
+        return None
 
     for i in range(inicio_fila, inicio_fila + filas):
         fila = []
@@ -79,9 +96,9 @@ def extraer_submatriz(matriz, inicio_fila, inicio_columna, filas, columnas):
         for j in range(inicio_columna, inicio_columna + columnas):
             fila.append(matriz[i][j])
 
-        submatriz.append(fila)
+        resultado.append(fila)
 
-    return submatriz
+    return resultado
 
 def transformar_matriz(matriz):
     transformada = []
