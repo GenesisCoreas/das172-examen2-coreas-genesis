@@ -1,73 +1,79 @@
-from funciones import *
-
-
-A = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
+from funciones import (
+    validar_matrices,
+    calcular_ocupacion,
+    evaluar_balance,
+    buscar_submatriz_critica
+)
+cargas = [
+    [80, 120, 60, 90],
+    [70, 110, 50, 100],
+    [60, 90, 80, 120]
 ]
 
-B = [
-    [9, 8, 7],
-    [6, 5, 4],
-    [3, 2, 1]
+capacidades = [
+    [100, 100, 100, 100],
+    [100, 100, 100, 100],
+    [100, 100, 100, 100]
 ]
 
+tolerancia = 20
+print("===== AEROCARGO MATRIX =====")
 
-print("Matriz A:")
-print(A)
+if validar_matrices(cargas, capacidades):
+    print("\nMatrices validas.")
 
-print("\nMatriz B:")
-print(B)
+    ocupacion, sobrecargas = calcular_ocupacion(
+        cargas,
+        capacidades
+    )
 
+    print("\nMatriz de ocupacion (%):")
+    for fila in ocupacion:
+        print(fila)
 
-print("\nSuma de matrices:")
-print(sumar_matrices(A, B))
+    print("\nCeldas con sobrecarga:")
+    print(sobrecargas)
 
+else:
+    print("\nMatrices invalidas.")
 
-print("\nMultiplicación de matrices:")
-print(multiplicar_matrices(A, B))
+pesos_filas, desbalance, balanceado = evaluar_balance(
+    cargas,
+    tolerancia
+)
 
+print("\nPesos por fila:")
+print(pesos_filas)
 
-print("\nMultiplicación por escalar:")
-print(multiplicar_por_escalar(A, 2))
+print("\nDesbalance lateral:")
+print(desbalance)
 
+print("\nEstado del balance:")
+if balanceado:
+    print("Balance aceptable.")
+else:
+    print("Balance fuera de tolerancia.")
 
-print("\nMatriz transpuesta:")
-print(transponer_matriz(A))
+submatriz_critica = buscar_submatriz_critica(
+    ocupacion,
+    2,
+    2
+)
 
+print("\nSubmatriz critica 2x2:")
+for fila in submatriz_critica:
+    print(fila)
 
-print("\nDiagonal principal:")
-print(obtener_diagonal_principal(A))
+print("\n===== RESUMEN DEL ANALISIS =====")
 
+print("Total de celdas con sobrecarga:", len(sobrecargas))
+print("Desbalance lateral:", desbalance)
 
-print("\nDiagonal secundaria:")
-print(obtener_diagonal_secundaria(A))
+if balanceado:
+    print("Resultado final: Carga balanceada.")
+else:
+    print("Resultado final: Carga fuera de balance.")
 
-
-print("\nSuma total:")
-print(sumar_matriz(A))
-
-
-print("\nMáximo:")
-print(encontrar_maximo(A))
-
-
-print("\nMínimo:")
-print(encontrar_minimo(A))
-
-
-print("\nPromedio:")
-print(calcular_promedio(A))
-
-
-print("\nEs cuadrada:")
-print(es_matriz_cuadrada(A))
-
-
-print("\nEs simétrica:")
-print(es_matriz_simetrica(A))
-
-
-print("\nSubmatriz crítica:")
-print(buscar_submatriz_critica(A, 2, 2))
+print("Submatriz critica:")
+for fila in submatriz_critica:
+    print(fila)

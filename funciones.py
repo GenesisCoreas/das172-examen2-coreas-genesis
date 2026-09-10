@@ -37,7 +37,7 @@ def calcular_ocupacion(cargas, capacidades):
 
         for j in range(len(cargas[i])):
 
-            porcentaje = (cargas[i][j] / capacidades[i][j]) * 100
+            porcentaje = round((cargas[i][j] / capacidades[i][j]) * 100, 2)
 
             fila_ocupacion.append(porcentaje)
 
