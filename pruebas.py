@@ -1,4 +1,4 @@
-from funciones import validar_matrices, calcular_ocupacion
+from funciones import validar_matrices, calcular_ocupacion, extraer_submatriz
 
 
 # CASO 1: matrices validas
@@ -161,3 +161,70 @@ assert validar_matrices(
 
 
 print("La prueba de matriz irregular paso correctamente.")
+
+# CASO 12: carga igual a cero permitida
+cargas_con_cero = [
+    [0, 50],
+    [25, 75]
+]
+
+capacidades_con_cero = [
+    [100, 100],
+    [100, 100]
+]
+
+assert validar_matrices(
+    cargas_con_cero,
+    capacidades_con_cero
+) == True
+
+ocupacion_cero, sobrecargas_cero = calcular_ocupacion(
+    cargas_con_cero,
+    capacidades_con_cero
+)
+
+assert ocupacion_cero[0][0] == 0.0
+assert (0, 0) not in sobrecargas_cero
+
+print("La prueba de carga igual a cero paso correctamente.")
+
+# CASO 13: extraer una submatriz valida
+matriz_prueba = [
+    [10, 20, 30],
+    [40, 50, 60],
+    [70, 80, 90]
+]
+
+submatriz_extraida = extraer_submatriz(
+    matriz_prueba,
+    1,
+    1,
+    2,
+    2
+)
+
+assert submatriz_extraida == [
+    [50, 60],
+    [80, 90]
+]
+
+print("La prueba de extraccion de submatriz paso correctamente.")
+
+# CASO 14: submatriz fuera de los limites
+matriz_limite = [
+    [10, 20, 30],
+    [40, 50, 60],
+    [70, 80, 90]
+]
+
+submatriz_invalida = extraer_submatriz(
+    matriz_limite,
+    2,
+    2,
+    2,
+    2
+)
+
+assert submatriz_invalida == None
+
+print("La prueba de submatriz fuera de los limites paso correctamente.")

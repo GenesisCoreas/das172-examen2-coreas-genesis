@@ -4,6 +4,8 @@ Proyecto desarrollado en Python para analizar la distribución de carga de una a
 
 La solución utiliza programación modular, separando las funciones de procesamiento, la ejecución principal del programa y las pruebas de validación.
 
+La correcta distribución de la carga es importante para la seguridad de la aeronave, ya que cada sección del piso posee una capacidad máxima de carga. Una sobrecarga puede comprometer la integridad estructural del fuselaje. Además, la distribución del peso debe mantenerse equilibrada entre los lados izquierdo y derecho de la aeronave para conservar condiciones adecuadas de balance y maniobrabilidad durante el vuelo.
+
 ## Archivos del proyecto
 
 - `funciones.py`: contiene las funciones modulares utilizadas para validar matrices, calcular ocupación, evaluar balance y buscar la submatriz crítica.
@@ -34,15 +36,26 @@ Además, `funciones.py` contiene operaciones auxiliares para el manejo y anális
 El proyecto está organizado utilizando programación modular, separando las funciones de procesamiento, la ejecución principal y las pruebas de validación.
 
 ```text
-              AeroCargo-Matrix
-                     |
-        ---------------------------
-        |            |            |
-  funciones.py     main.py     pruebas.py
-        |            |            |
- Procesamiento    Ejecución     Validación
- de matrices      principal     y pruebas
+  AeroCargo-Matrix
+                           |
+             -----------------------------
+             |                           |
+        funciones.py                  main.py
+             |                           |
+     Procesamiento y              Ejecución principal
+   análisis de matrices           del programa
+             |
+        pruebas.py
+             |
+     Validación y pruebas
 ```
+## Decisiones técnicas
+
+Se utilizó programación modular para separar las responsabilidades del sistema. Las funciones relacionadas con el procesamiento y análisis de matrices se encuentran en `funciones.py`, mientras que `main.py` contiene el flujo principal del programa y utiliza dichas funciones para realizar el análisis de carga de la aeronave.
+
+Las matrices fueron representadas mediante listas bidimensionales de Python, permitiendo acceder a cada posición mediante índices de fila y columna. Esta representación facilita operaciones como la validación de cargas y capacidades, el cálculo de ocupación, la evaluación del balance lateral y la búsqueda de submatrices críticas.
+
+El archivo `pruebas.py` se mantiene separado del programa principal para verificar el funcionamiento de las funciones mediante diferentes casos de prueba, incluyendo casos válidos, casos límite y matrices irregulares.
 
 ## Ejecución
 
