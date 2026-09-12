@@ -29,12 +29,45 @@ El sistema AeroCargo-Matrix permite:
 
 Además, `funciones.py` contiene operaciones auxiliares para el manejo y análisis de matrices, utilizadas durante el desarrollo y las pruebas del proyecto.
 
+## Arquitectura modular
+
+El proyecto está organizado utilizando programación modular, separando las funciones de procesamiento, la ejecución principal y las pruebas de validación.
+
+```text
+              AeroCargo-Matrix
+                     |
+        ---------------------------
+        |            |            |
+  funciones.py     main.py     pruebas.py
+        |            |            |
+ Procesamiento    Ejecución     Validación
+ de matrices      principal     y pruebas
+```
+
 ## Ejecución
 
-Para ejecutar el programa principal, desde la terminal ubicada en la carpeta del proyecto se utiliza:
+Para ejecutar el programa principal, ubíquese en la carpeta del proyecto desde la terminal y utilice:
 
 ```bash
 python main.py
+```
+
+El programa ejecutará el flujo principal de AeroCargo-Matrix y mostrará:
+
+- La validación de las matrices de cargas y capacidades.
+- La matriz de ocupación expresada en porcentaje.
+- Las coordenadas de las celdas con sobrecarga.
+- El peso total de cada fila.
+- El valor del desbalance lateral.
+- El estado del balance de acuerdo con la tolerancia establecida.
+- La submatriz crítica 2x2.
+- Un resumen final del análisis.
+
+Para ejecutar las pruebas del proyecto, utilice:
+
+```bash
+python pruebas.py
+```
 
 ## Ejemplo
 
